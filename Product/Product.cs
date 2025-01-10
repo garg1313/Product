@@ -2,7 +2,6 @@
 class Products
 {
     public int Id;
-    public int a;
     public string Name;
     public int Price;
     public int Stock;
