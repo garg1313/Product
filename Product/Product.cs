@@ -2,6 +2,7 @@
 class Products
 {
     public int Id;
+    public int a;
     public string Name;
     public int Price;
     public int Stock;
@@ -48,7 +49,7 @@ class Clothing:Products
 {
     public static void Main(string[] args)
     {
-        *//*Electronic Gyser = new Electronic();
+        Electronic Gyser = new Electronic();
         Gyser.Name = "G1HOT";
         Gyser.Brand = "Havels";
         Gyser.Warrranty = 1;
@@ -56,11 +57,11 @@ class Clothing:Products
         Gyser.Price = 4000;
         Gyser.Id = 101;
         Gyser.Details();
-        Gyser.Discount();*//*
+        Gyser.Discount();
 
 
-        
+
     }
-}
-*/
+}*/
+
 
