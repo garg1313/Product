@@ -2,7 +2,7 @@
 class Character
 {
     private string _name;
-    private int _health = 100;
+    private int _health=100;
     public int Health
     {
         get

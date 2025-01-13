@@ -37,7 +37,7 @@ namespace Product
 
     class run
     {
-        public static void Main(string[] args)
+       /* public static void Main(string[] args)
         {
             Player P1 = new Player("Jatin Garg",100,level.Medium);
             Console.WriteLine(P1.Name);
@@ -51,6 +51,6 @@ namespace Product
 
 
             
-        }
+        }*/
     }
 }
