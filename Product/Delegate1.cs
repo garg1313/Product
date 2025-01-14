@@ -55,13 +55,16 @@ namespace Product
         public void UpdateScore(int points)
         {
 
-
-            Score += points;
             if (points > 8)
             {
                 Console.WriteLine("Bonus Points ");
-                Score += 1;
+                Score += points + 1;
             }
+            else
+            {
+                Score += points;
+            }
+            
         }
 
 
@@ -134,9 +137,9 @@ namespace Product
                 board.Addplayer(p1);
                 board.Addplayer(g1);
 
-                C1.UpdateScore(5);
-                 p1.Score += 12;
-                g1.Score += 12;
+                C1.UpdateScore(9);
+                 p1.UpdateScore(12);
+                g1.UpdateScore(12);
 
                     
             }
