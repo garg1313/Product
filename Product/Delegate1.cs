@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Product
 {
-    public delegate void OnUpdate(object source);
+    public delegate void OnUpdate();
 
     internal class Playeer
     {
@@ -17,20 +17,26 @@ namespace Product
         private int _score;
         public int Id { get { return _id; } }
         public string Name { get { return _name; } }
-        public int Score { get { return _score; } set { _score = value; } }
+        public int Score { get { return _score; } set { _score = value; OnscoreUpdate(); } }
         public event OnUpdate OnScore;
-        public Playeer(int id, string name)
+        public Playeer(int id, string name,int score)
         {
 
             _id = id;
             _name = name;
+            _score = score;
 
         }
         public void details()
         {
-            Console.WriteLine($"PlayerName:- {_name} PlayerId:- {_id} PlayerScore:- {_score}");
+            Console.WriteLine($"PlayerName:- {_name}\nPlayerId:- {_id}\nPlayerScore:- {_score}\n");
         }
-
+        private void OnscoreUpdate()
+            
+        {
+            Console.WriteLine($"{_name} Score Updated\n");
+            OnScore?.Invoke();
+        }
 
     }
     interface IScoreable
@@ -41,7 +47,7 @@ namespace Product
     class CausalPlayer : Playeer, IScoreable
     {
 
-        public CausalPlayer(int id, string name) : base(id, name)
+        public CausalPlayer(int id, string name, int score) : base(id, name,score)
         {
 
         }
@@ -59,14 +65,11 @@ namespace Product
         }
 
 
-        private void CausalPlayer_ScoreUpdate()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
     class ProPlayer : Playeer, IScoreable
     {
-        public ProPlayer(int id, string name) : base(id, name)
+        public ProPlayer(int id, string name, int score) : base(id, name,score)
         {
 
 
@@ -82,7 +85,7 @@ namespace Product
     }
     class GuestPalyer : Playeer, IScoreable
     {
-        public GuestPalyer(int id, string name) : base(id, name)
+        public GuestPalyer(int id, string name, int score) : base(id, name, score)
         {
 
 
@@ -96,17 +99,46 @@ namespace Product
 
 
     }
+    class LeaderBoard()
+    {
+        private List<Playeer> playerList = new List<Playeer>();
+        public void Addplayer(Playeer player) {
+            playerList.Add(player);
+            player.OnScore += DisplayLeader;
+        }
+        public void DisplayLeader()
 
-    class prog
+        {
+            Console.WriteLine("---LeaderBoard---\n");
+            foreach (var play in playerList)
+
+            {
+                
+                play.details();
+            }
+        }
+    }
+        class prog
     {
         public static void Main(string[] args)
         {
             {
 
-                CausalPlayer C1 = new CausalPlayer(2, "Jatin");
-                C1.details();
-                C1.UpdateScore(2);
-                C1.details();
+                CausalPlayer C1 = new CausalPlayer(2, "Rahul",100);
+                ProPlayer p1 = new ProPlayer(4, "Jatin", 100);
+                GuestPalyer g1 = new GuestPalyer(5, "Laddi", 100);
+
+
+                LeaderBoard board = new LeaderBoard();
+                board.Addplayer(C1);
+                board.Addplayer(p1);
+                board.Addplayer(g1);
+
+                C1.UpdateScore(5);
+                 p1.Score += 12;
+                g1.Score += 12;
+
+                    
             }
 
 
