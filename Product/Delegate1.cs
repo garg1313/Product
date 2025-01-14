@@ -123,11 +123,11 @@ namespace Product
     }
         class prog
     {
-        public static void Main(string[] args)
+        /*public static void Main(string[] args)
         {
             {
 
-                CausalPlayer C1 = new CausalPlayer(2, "Rahul",100);
+                CausalPlayer C1 = new CausalPlayer(2, "Rahul", 100);
                 ProPlayer p1 = new ProPlayer(4, "Jatin", 100);
                 GuestPalyer g1 = new GuestPalyer(5, "Laddi", 100);
 
@@ -138,17 +138,12 @@ namespace Product
                 board.Addplayer(g1);
 
                 C1.UpdateScore(9);
-                 p1.UpdateScore(12);
+                p1.UpdateScore(12);
                 g1.UpdateScore(12);
 
-                    
+
             }
-
-
-
-
-
-        }
+        }*/
 
     }
 }
