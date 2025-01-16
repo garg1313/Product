@@ -84,7 +84,7 @@ namespace Product
     }
         class pro
         {
-            public  void DisplayAlert(string msg)
+            /*public  void DisplayAlert(string msg)
             {
                 Console.WriteLine("ALERT: " + msg);
             }
@@ -101,12 +101,12 @@ namespace Product
                 t1.ReadData();
 
                 b1.details();
-                b1.ReadData();
+                b1.ReadData();*//*
             
 
-            }
+            }*/
         }
 
-
-    
 }
+    
+

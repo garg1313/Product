@@ -12,7 +12,7 @@ namespace Product
         void StopEngine();
 
     }
-    class Car : IVehicle
+    class Car1 : IVehicle
 
     {
         public void StartEngine()
@@ -45,7 +45,7 @@ namespace Product
     {
         /*public static void Main(string[] args)
         {
-            Car Audi = new Car();
+            Car1 Audi = new Car1();
             Audi.StartEngine();
             Audi.StopEngine();
             Bike Ktm = new Bike();
