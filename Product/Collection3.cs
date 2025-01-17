@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Product
+﻿namespace Product
 {
     internal class Collection3
     {
-        public void Swap<t>(ref List<t> l1,int index1,int index2)
+        public void Swap<t>(ref List<t> l1, int index1, int index2)
         {
-            if(index1< 0 || index2 < 0 || index1>l1.Count || index2>l1.Count)
+            if (index1 < 0 || index2 < 0 || index1 > l1.Count || index2 > l1.Count)
             {
                 Console.WriteLine("Not vaild swpping");
             }

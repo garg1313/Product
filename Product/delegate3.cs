@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Product
+﻿namespace Product
 {
     interface IRentable
     {
@@ -43,7 +37,7 @@ namespace Product
     }
     class Car : Vehicle, IRentable
     {
-        public Car(int id, string brand, long rate) : base(id, brand, rate ){}
+        public Car(int id, string brand, long rate) : base(id, brand, rate) { }
         public void Rent(int days) { }
     }
 

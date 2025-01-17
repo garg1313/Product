@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Product
+﻿namespace Product
 {
     public delegate void OnWeatherUpdate(string msg);
     interface IWeatherSensor
@@ -57,7 +51,8 @@ namespace Product
                 //OnWUP?.Invoke("Extreme Heat Alert: High Temperature Detected!");
                 RaiseWeatherAlert("Extreme Heat Alert: High Temperature Detected!\n");
             }
-            else if(temp<0){
+            else if (temp < 0)
+            {
                 RaiseWeatherAlert("OH its to Cold");
             }
         }
@@ -77,36 +72,36 @@ namespace Product
             if (pressure > 1050)
             {
                 RaiseWeatherAlert("Storm Alert: Low Pressure Detected!\n");
-               // OnWUP?.Invoke("Storm Alert: Low Pressure Detected!");
+                // OnWUP?.Invoke("Storm Alert: Low Pressure Detected!");
             }
 
         }
     }
-        class pro
+    class pro
+    {
+        /*public  void DisplayAlert(string msg)
         {
-            /*public  void DisplayAlert(string msg)
-            {
-                Console.WriteLine("ALERT: " + msg);
-            }
-
-            public static void Main(string[] args)
-            {
-                pro programInstance = new pro();
-                Thermometer t1=new Thermometer(1200,"New York");
-                Barometer b1 = new Barometer(1500, "London");
-                t1.OnWUP += programInstance.DisplayAlert;
-                b1.OnWUP += programInstance.DisplayAlert;
-     
-                t1.details();
-                t1.ReadData();
-
-                b1.details();
-                b1.ReadData();*//*
-            
-
-            }*/
+            Console.WriteLine("ALERT: " + msg);
         }
 
+        public static void Main(string[] args)
+        {
+            pro programInstance = new pro();
+            Thermometer t1=new Thermometer(1200,"New York");
+            Barometer b1 = new Barometer(1500, "London");
+            t1.OnWUP += programInstance.DisplayAlert;
+            b1.OnWUP += programInstance.DisplayAlert;
+
+            t1.details();
+            t1.ReadData();
+
+            b1.details();
+            b1.ReadData();*//*
+
+
+        }*/
+    }
+
 }
-    
+
 

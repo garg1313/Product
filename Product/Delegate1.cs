@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace Product
+﻿namespace Product
 {
     public delegate void OnUpdate();
 
@@ -19,7 +12,7 @@ namespace Product
         public string Name { get { return _name; } }
         public int Score { get { return _score; } set { _score = value; OnscoreUpdate(); } }
         public event OnUpdate OnScore;
-        public Playeer(int id, string name,int score)
+        public Playeer(int id, string name, int score)
         {
 
             _id = id;
@@ -32,7 +25,7 @@ namespace Product
             Console.WriteLine($"PlayerName:- {_name}\nPlayerId:- {_id}\nPlayerScore:- {_score}\n");
         }
         private void OnscoreUpdate()
-            
+
         {
             Console.WriteLine($"{_name} Score Updated\n");
             OnScore?.Invoke();
@@ -47,7 +40,7 @@ namespace Product
     class CausalPlayer : Playeer, IScoreable
     {
 
-        public CausalPlayer(int id, string name, int score) : base(id, name,score)
+        public CausalPlayer(int id, string name, int score) : base(id, name, score)
         {
 
         }
@@ -64,15 +57,15 @@ namespace Product
             {
                 Score += points;
             }
-            
+
         }
 
 
-        
+
     }
     class ProPlayer : Playeer, IScoreable
     {
-        public ProPlayer(int id, string name, int score) : base(id, name,score)
+        public ProPlayer(int id, string name, int score) : base(id, name, score)
         {
 
 
@@ -105,7 +98,8 @@ namespace Product
     class LeaderBoard()
     {
         private List<Playeer> playerList = new List<Playeer>();
-        public void Addplayer(Playeer player) {
+        public void Addplayer(Playeer player)
+        {
             playerList.Add(player);
             player.OnScore += DisplayLeader;
         }
@@ -116,12 +110,12 @@ namespace Product
             foreach (var play in playerList)
 
             {
-                
+
                 play.details();
             }
         }
     }
-        class prog
+    class prog
     {
         /*public static void Main(string[] args)
         {

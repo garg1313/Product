@@ -1,5 +1,4 @@
-﻿using System;
-class Products
+﻿class Products
 {
     public int Id;
     public string Name;
@@ -22,7 +21,7 @@ class Products
 
 
 }
-class Electronic:Products
+class Electronic : Products
 {
     public int Warrranty;
     public string Brand;
@@ -30,10 +29,10 @@ class Electronic:Products
     {
         discount = Price * 40 / 100;
         Price = Price - discount;
-        Console.WriteLine("Price after Discount is "+Price);
+        Console.WriteLine("Price after Discount is " + Price);
     }
 }
-class Clothing:Products
+class Clothing : Products
 {
     public string size;
     public string fabric;

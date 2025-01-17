@@ -1,8 +1,4 @@
-﻿using System;
-
-
-
-public enum level
+﻿public enum level
 {
     Beginner,
     Intermediate,
@@ -15,74 +11,75 @@ public enum Languages
     Cpp,
     Java
 }
-     abstract class Course
+abstract class Course
+{
+    private string _Cname;
+    private string _Instructor;
+    private string _Duration;
+
+    public Course(string Cname, string Instructor, string Duration)
     {
-        private string _Cname;
-        private string _Instructor;
-        private string _Duration;
-
-        public Course(string Cname, string Instructor, string Duration)
+        _Cname = Cname;
+        _Instructor = Instructor;
+        _Duration = Duration;
+    }
+    public string Cname
+    {
+        get
         {
-            _Cname = Cname;
-            _Instructor = Instructor;
-            _Duration = Duration;
-        }
-        public string Cname
-        {
-            get
-            {
-                return _Cname;
-            }
-        }
-        public string Instructor
-        {
-            get
-            {
-                return _Instructor;
-            }
-        }
-        public string Duration
-        {
-            get
-            {
-                return _Duration;
-            }
-
-        }
-        public void Details()
-        {
-            Console.WriteLine($"CourseName :-{_Cname}, Instructor :-{_Instructor}, Duration:- {_Duration}");
-
-        }
-        public virtual void Cost(int duration)
-        {
-            
+            return _Cname;
         }
     }
+    public string Instructor
+    {
+        get
+        {
+            return _Instructor;
+        }
+    }
+    public string Duration
+    {
+        get
+        {
+            return _Duration;
+        }
 
-class ProgrammingCourse: Course
+    }
+    public void Details()
+    {
+        Console.WriteLine($"CourseName :-{_Cname}, Instructor :-{_Instructor}, Duration:- {_Duration}");
+
+    }
+    public virtual void Cost(int duration)
+    {
+
+    }
+}
+
+class ProgrammingCourse : Course
 {
     private int cost;
     public Languages Language { get; set; }
     public level Level { get; set; }
-    public ProgrammingCourse(string Cname, string Instructor, string Duration,level lev, Languages lan) : base(Cname, Instructor, Duration) {
+    public ProgrammingCourse(string Cname, string Instructor, string Duration, level lev, Languages lan) : base(Cname, Instructor, Duration)
+    {
         Language = lan;
         Level = lev;
-        
+
     }
     public override void Cost(int Duration)
     {
         cost = Duration * 2000;
-        if(Language==Languages.CSharp)
+        if (Language == Languages.CSharp)
         {
             cost += 2700;
         }
         Console.WriteLine("Cost is " + cost);
-    
+
     }
 
 }
-class DesignCourse : Course 
+class DesignCourse : Course
 {
     private int cost;
     public string Software { get; set; }
@@ -100,7 +97,7 @@ class DesignCourse : Course
 
 class BusinessCourse : Course
 {
-   private int cost;
+    private int cost;
     BusinessCourse(string Cname, string Instructor, string Duration) : base(Cname, Instructor, Duration) { }
     public string TargetAudience { get; set; }
     public string Outcome { get; set; }
@@ -110,7 +107,7 @@ class BusinessCourse : Course
         Console.WriteLine("Cost is " + cost);
     }
 }
-    
+
 
 
 
@@ -129,5 +126,5 @@ class Run
         programmingCourse.Cost(6);
     }*/
 }
-     
+
 
